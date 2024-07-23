@@ -1,0 +1,13 @@
+Paso 1: Para iniciar el proyecto ejecutar el comando 'npm run dev'.
+
+Paso 2: Ir al host que habilita Vite.
+
+Paso 3: Para agregar un usuario hacer clic en el boton con un "+" o el emoji "➕" que se encuentra en la parte inferior izquierda.
+
+Paso 4: Rellenar el formualrio y luego dar clic en el boton agregar.
+
+Paso 5: Para editar un usuario, hacer clic en el boton que dice "Editar" que se encuentra en la parte derecha del usuario mostrado.
+
+Paso 6: Editar el usuario mostrado en el formulario y para guardar dar clic en el boton que dice "Guardar".
+
+Paso 7: Para eliminar un usuario, hacer clic en el boton que dice "Eliminar" que se encuentra al costado del boton "Editar".
