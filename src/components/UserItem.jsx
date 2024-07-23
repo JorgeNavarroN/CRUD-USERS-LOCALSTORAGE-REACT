@@ -4,7 +4,6 @@ import { ModalValidateDelete } from '../modal/modalValidateDelete';
 import { PropTypes } from 'prop-types'
 
 export function UserItem({ id, userName, name, email }) {
-    const users = JSON.parse(localStorage.getItem('users'));
     const [isOpenModalEditar, setIsOpenModalEditar] = useState(false);
     const [isOpenModalDeleteValidate, setIsOpenModalDeleteValidate] = useState(false);
 
@@ -35,6 +34,7 @@ export function UserItem({ id, userName, name, email }) {
 
     const saveUser = () => {
         setFormDataUser({ ...formDataUser });
+        const users = JSON.parse(localStorage.getItem('users'));
         const usersUpdated = users.map(user => {
             if (user.id === id) {
                 user.userName = formDataUser.userName;
@@ -47,6 +47,7 @@ export function UserItem({ id, userName, name, email }) {
     }
 
     const deleteUser = () => {
+        const users = JSON.parse(localStorage.getItem('users'));
         const usersUpdated = users.filter(user => user.id !== id);
         localStorage.setItem('users', JSON.stringify(usersUpdated));
     }

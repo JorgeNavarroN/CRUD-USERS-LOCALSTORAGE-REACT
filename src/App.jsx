@@ -1,23 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import { UserList } from "./components/UserList";
 import { UserForm } from "./components/UserForm";
 
 export function App() {
 
-    const [listUsers, setListUsers] = useState([])
+    const [listUsers, setListUsers] = useState(() => {
+        const users = localStorage.getItem('users');
+        return JSON.parse(users);
+    })
 
     const [isOpenModalRegistro, setIsOpenModalRegistro] = useState(false);
     const [isDisabled, setIsDisabled] = useState(false);
-
-    const loadingData = () => {
-        const users = localStorage.getItem('users');
-        if (users) {
-            setListUsers(JSON.parse(users));
-        }
-    }
-
-    useEffect(loadingData, [])
 
     const openModalRegistro = () => {
         setIsOpenModalRegistro(true);
@@ -44,7 +38,6 @@ export function App() {
     }
     const handleChange = (e) => {
         const { name, value } = e.target;
-        // let lastUser = listUsers.at(-1);
         setFormData({...formData, [name]: value});
     };
 
